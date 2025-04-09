@@ -23,16 +23,15 @@ const FeatureCard = ({ icon, title, content, index }) => (
   </div>
 )
 
-const Business = () => {
+const EnterpriseSolutions = () => {
   return (
     <section id='features' className={layout.section}>
       <div className={layout.sectionInfo}>
-        <h2 className={styles.heading2}>You do the business, <br className='sm:block hidden'/>we'll handle the money.</h2>
+        <h2 className={styles.heading2}>You focus on vision, <br className='sm:block hidden'/>we deliver the technology.</h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          With the right credit card, 
-          you can improve your financial life by building credit,
-          earning rewards and saving money.
-          But with hundreds of credit cards on the market.
+          Over 200 enterprises have achieved financial success and market growth with our
+          development expertise. We combine logic, innovation, and emotion to help
+          visionaries like you transform on a massive scale.
         </p>
         <Button styles='mt-10'/>
       </div>
@@ -45,4 +44,4 @@ const Business = () => {
   )
 }
 
-export default Business
+export default EnterpriseSolutions

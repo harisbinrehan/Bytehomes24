@@ -1,0 +1,137 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Soft glow filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Gradients for rings -->
+    <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d9534f"/>
+      <stop offset="100%" stop-color="#b33c39"/>
+      <animate attributeName="x1" values="0%;100%;0%" dur="15s" repeatCount="indefinite"/>
+    </linearGradient>
+    
+    <linearGradient id="orangeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0ad4e"/>
+      <stop offset="100%" stop-color="#d89b46"/>
+      <animate attributeName="y1" values="0%;100%;0%" dur="12s" repeatCount="indefinite"/>
+    </linearGradient>
+    
+    <linearGradient id="whiteGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0e0e0"/>
+      <animate attributeName="x1" values="0%;100%;0%" dur="18s" repeatCount="indefinite"/>
+    </linearGradient>
+    
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#b4972f"/>
+      <animate attributeName="y1" values="0%;100%;0%" dur="20s" repeatCount="indefinite"/>
+    </linearGradient>
+    
+    <linearGradient id="yellowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8e04e"/>
+      <stop offset="100%" stop-color="#c3bc43"/>
+      <animate attributeName="x1" values="0%;100%;0%" dur="16s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Large red ring (left) - made smaller -->
+  <circle cx="200" cy="300" r="110" stroke="url(#redGradient)" stroke-width="15" fill="none" filter="url(#glow)">
+    <animate attributeName="r" values="110;118;110" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="15;18;15" dur="6s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Orange ring (top-left) - made smaller -->
+  <circle cx="350" cy="200" r="70" stroke="url(#orangeGradient)" stroke-width="12" fill="none" filter="url(#glow)">
+    <animate attributeName="r" values="70;75;70" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="12;14;12" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Small white ring (left-bottom) - made smaller -->
+  <circle cx="150" cy="500" r="60" stroke="url(#whiteGradient)" stroke-width="12" fill="none" filter="url(#glow)">
+    <animate attributeName="r" values="60;65;60" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="12;14;12" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Large white ring (right) - made smaller -->
+  <circle cx="580" cy="250" r="90" stroke="url(#whiteGradient)" stroke-width="12" fill="none" filter="url(#glow)">
+    <animate attributeName="r" values="90;95;90" dur="12s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="12;14;12" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Gold ring (large right) - repositioned and made smaller -->
+  <circle cx="650" cy="300" r="100" stroke="url(#goldGradient)" stroke-width="15" fill="none" filter="url(#glow)">
+    <animate attributeName="r" values="100;107;100" dur="11s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="15;17;15" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Yellow ring (bottom) - made smaller -->
+  <circle cx="450" cy="500" r="75" stroke="url(#yellowGradient)" stroke-width="12" fill="none" filter="url(#glow)">
+    <animate attributeName="r" values="75;80;75" dur="9s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="12;14;12" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Red ring (bottom-right) - made smaller -->
+  <circle cx="580" cy="450" r="70" stroke="url(#redGradient)" stroke-width="12" fill="none" filter="url(#glow)">
+    <animate attributeName="r" values="70;75;70" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-width" values="12;14;12" dur="8s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Code square (center) shuffling between rings -->
+  <g>
+    <!-- Movement path between rings, adjusted for new ring positions -->
+    <animateMotion path="M400,300 C300,250 200,300 200,300 S350,200 350,200 S250,400 150,500 S450,350 580,250 S650,300 650,300 S550,450 450,500 S580,450 580,450 S450,350 400,300 Z" dur="30s" repeatCount="indefinite"/>
+    
+    <!-- Rotation while moving -->
+    <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite" additive="sum"/>
+    
+    <!-- White square with rounded corners - slightly smaller -->
+    <rect x="-60" y="-60" width="120" height="120" rx="20" ry="20" fill="white" filter="url(#glow)">
+      <animate attributeName="width" values="120;125;120" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="height" values="120;125;120" dur="7s" repeatCount="indefinite"/>
+    </rect>
+    
+    <!-- Code brackets and lines -->
+    <g fill="#4285F4">
+      <!-- Left bracket -->
+      <path d="M-30,15 L-45,0 L-30,-15">
+        <animate attributeName="d" values="M-30,15 L-45,0 L-30,-15;M-33,18 L-48,0 L-33,-18;M-30,15 L-45,0 L-30,-15" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <line x1="-45" y1="0" x2="-30" y2="-15" stroke="#4285F4" stroke-width="5" stroke-linecap="round">
+        <animate attributeName="x2" values="-30;-33;-30" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="-15;-18;-15" dur="4s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-45" y1="0" x2="-30" y2="15" stroke="#4285F4" stroke-width="5" stroke-linecap="round">
+        <animate attributeName="x2" values="-30;-33;-30" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="15;18;15" dur="4s" repeatCount="indefinite"/>
+      </line>
+      
+      <!-- Right bracket -->
+      <path d="M30,15 L45,0 L30,-15">
+        <animate attributeName="d" values="M30,15 L45,0 L30,-15;M33,18 L48,0 L33,-18;M30,15 L45,0 L30,-15" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <line x1="45" y1="0" x2="30" y2="-15" stroke="#4285F4" stroke-width="5" stroke-linecap="round">
+        <animate attributeName="x2" values="30;33;30" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="-15;-18;-15" dur="4s" repeatCount="indefinite"/>
+      </line>
+      <line x1="45" y1="0" x2="30" y2="15" stroke="#4285F4" stroke-width="5" stroke-linecap="round">
+        <animate attributeName="x2" values="30;33;30" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="15;18;15" dur="4s" repeatCount="indefinite"/>
+      </line>
+      
+      <!-- Code lines -->
+      <line x1="-25" y1="-25" x2="25" y2="-25" stroke="#4285F4" stroke-width="5" stroke-linecap="round">
+        <animate attributeName="x2" values="25;28;25" dur="5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-25" y1="0" x2="25" y2="0" stroke="#4285F4" stroke-width="5" stroke-linecap="round">
+        <animate attributeName="x2" values="25;28;25" dur="6s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-25" y1="25" x2="25" y2="25" stroke="#4285F4" stroke-width="5" stroke-linecap="round">
+        <animate attributeName="x2" values="25;28;25" dur="5s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+</svg>
