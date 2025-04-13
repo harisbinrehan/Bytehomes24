@@ -21,7 +21,7 @@ const DevelopmentServices = () => {
           We combine cutting-edge technology with innovative thinking to deliver
           punctual projects that drive financial success and market growth.
         </p>
-        <div className='flex flex-row flex-wrap sm:mt-10 mt-6'>
+        {/* <div className='flex flex-row flex-wrap sm:mt-10 mt-6'>
           <img
             src={apple}
             alt='enterprise-solutions'
@@ -32,7 +32,7 @@ const DevelopmentServices = () => {
             alt='business-solutions'
             className='w-[128px] h-[42px] object-contain cursor-pointer'
           />
-        </div>
+        </div> */}
       </div>  
     </section>
   )

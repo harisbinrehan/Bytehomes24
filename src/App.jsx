@@ -32,9 +32,9 @@ const App = () => {
           <Business/>
           <Billing/>
           <CardDeal/>
-          <Testimonials/>
-          <Clients/>
-          <CTA/>
+          {/* <Testimonials/> */}
+          {/* <Clients/> */}
+          {/* <CTA/> */}
           <Footer/>     
         </div>
       </div>

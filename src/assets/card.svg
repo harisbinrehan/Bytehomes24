@@ -1,118 +1,91 @@
-<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <!-- Enhanced gradients and filters for 3D effects -->
-    <linearGradient id="sphereGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FF61D2"/>
-      <stop offset="50%" stop-color="#FE9090"/>
-      <stop offset="100%" stop-color="#FFD94C"/>
-      <animate attributeName="x1" values="0%;100%;0%" dur="8s" repeatCount="indefinite"/>
-      <animate attributeName="y1" values="0%;100%;0%" dur="6s" repeatCount="indefinite"/>
-    </linearGradient>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid lines -->
+  <g stroke="#33333320" stroke-width="1">
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+    <line x1="0" y1="500" x2="800" y2="500" />
     
-    <radialGradient id="sphere1" cx="30%" cy="30%" r="70%" fx="20%" fy="20%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="20%" stop-color="#9C4DF4"/>
-      <stop offset="100%" stop-color="#4F26F9"/>
-      <animate attributeName="cx" values="30%;40%;30%" dur="7s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="30%;20%;30%" dur="5s" repeatCount="indefinite"/>
-    </radialGradient>
-    
-    <radialGradient id="sphere2" cx="30%" cy="30%" r="70%" fx="20%" fy="20%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="20%" stop-color="#00F5A0"/>
-      <stop offset="100%" stop-color="#00D9F5"/>
-      <animate attributeName="cx" values="30%;20%;30%" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="30%;40%;30%" dur="7s" repeatCount="indefinite"/>
-    </radialGradient>
-    
-    <radialGradient id="sphere3" cx="30%" cy="30%" r="70%" fx="20%" fy="20%">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="20%" stop-color="#FF7170"/>
-      <stop offset="100%" stop-color="#FFE57F"/>
-      <animate attributeName="cx" values="30%;40%;30%" dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="30%;20%;30%" dur="8s" repeatCount="indefinite"/>
-    </radialGradient>
-    
-    <!-- Enhanced shadow filters -->
-    <filter id="shadow3D" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
-      <feOffset dx="2" dy="6" result="offsetBlur"/>
-      <feSpecularLighting in="blur" surfaceScale="6" specularConstant="0.8" specularExponent="20" lighting-color="#ffffff" result="specOut">
-        <fePointLight x="200" y="100" z="150"/>
-      </feSpecularLighting>
-      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
-      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litPaint"/>
-      <feMerge>
-        <feMergeNode in="offsetBlur"/>
-        <feMergeNode in="litPaint"/>
-      </feMerge>
-    </filter>
-    
-    <filter id="glow3D" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="6" result="blur"/>
-      <feColorMatrix in="blur" type="matrix" values="0 0 0 1 0  0 0 0 1 0  0 0 0 1 0  0 0 0 18 -7" result="glow"/>
-      <feMerge>
-        <feMergeNode in="glow"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
-  
-  <!-- 3D Spheres with light reflections (reduced size) -->
-  <g transform="translate(200, 200)">
-    <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="120s" repeatCount="indefinite" additive="sum"/>
-    
-    <!-- First sphere (smaller) -->
-    <circle cx="-80" cy="-40" r="40" fill="url(#sphere1)" filter="url(#shadow3D)">
-      <animate attributeName="r" values="40;43;40" dur="7s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate" values="0,0;10,-10;0,0" dur="8s" repeatCount="indefinite" additive="sum"/>
-    </circle>
-    
-    <!-- Second sphere (smaller) -->
-    <circle cx="70" cy="-60" r="30" fill="url(#sphere2)" filter="url(#shadow3D)">
-      <animate attributeName="r" values="30;33;30" dur="5s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate" values="0,0;-10,-5;0,0" dur="6s" repeatCount="indefinite" additive="sum"/>
-    </circle>
-    
-    <!-- Third sphere (smaller) -->
-    <circle cx="30" cy="80" r="35" fill="url(#sphere3)" filter="url(#shadow3D)">
-      <animate attributeName="r" values="35;38;35" dur="6s" repeatCount="indefinite"/>
-      <animateTransform attributeName="transform" type="translate" values="0,0;5,10;0,0" dur="7s" repeatCount="indefinite" additive="sum"/>
-    </circle>
+    <line x1="100" y1="0" x2="100" y2="600" />
+    <line x1="200" y1="0" x2="200" y2="600" />
+    <line x1="300" y1="0" x2="300" y2="600" />
+    <line x1="400" y1="0" x2="400" y2="600" />
+    <line x1="500" y1="0" x2="500" y2="600" />
+    <line x1="600" y1="0" x2="600" y2="600" />
+    <line x1="700" y1="0" x2="700" y2="600" />
   </g>
   
-  <!-- Floating particles with 3D movement -->
-  <g filter="url(#glow3D)">
-    <circle cx="100" cy="100" r="3" fill="#FFF">
-      <animate attributeName="cx" values="100;150;200;150;100" dur="15s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="100;150;200;250;100" dur="20s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="3;4;3" dur="4s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="1;0.5;1" dur="5s" repeatCount="indefinite"/>
-    </circle>
-    
-    <circle cx="300" cy="100" r="2" fill="#FFF">
-      <animate attributeName="cx" values="300;250;200;250;300" dur="18s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="100;150;200;150;100" dur="15s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="2;3;2" dur="6s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="1;0.5;1" dur="4s" repeatCount="indefinite"/>
-    </circle>
-    
-    <circle cx="200" cy="300" r="3" fill="#FFF">
-      <animate attributeName="cx" values="200;150;100;150;200" dur="20s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="300;250;200;150;300" dur="17s" repeatCount="indefinite"/>
-      <animate attributeName="r" values="3;4;3" dur="5s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="1;0.5;1" dur="7s" repeatCount="indefinite"/>
-    </circle>
-  </g>
+  <!-- Main nodes -->
+  <circle cx="200" cy="200" r="50" fill="#4361ee" />
+  <circle cx="400" cy="300" r="60" fill="#b7950b" /> <!-- Changed to dark yellow -->
+  <circle cx="600" cy="220" r="45" fill="#7209b7" />
+  <circle cx="300" cy="450" r="55" fill="#f72585" />
+  <circle cx="550" cy="400" r="40" fill="#4cc9f0" />
   
-  <!-- 3D curved path -->
-  <path d="M50,200 Q125,100 200,200 T350,200" stroke="url(#sphereGradient)" stroke-width="6" fill="none" opacity="0.8" filter="url(#glow3D)">
-    <animate attributeName="d" 
-             values="M50,200 Q125,100 200,200 T350,200;
-                     M50,200 Q125,300 200,200 T350,200;
-                     M50,200 Q125,100 200,200 T350,200" 
-             dur="15s" 
-             repeatCount="indefinite"/>
-    <animate attributeName="stroke-width" values="6;9;6" dur="10s" repeatCount="indefinite"/>
-  </path>
+  <!-- Connection lines -->
+  <line x1="200" y1="200" x2="400" y2="300" stroke="#333333" stroke-width="3" stroke-opacity="0.6" />
+  <line x1="400" y1="300" x2="600" y2="220" stroke="#333333" stroke-width="3" stroke-opacity="0.6" />
+  <line x1="400" y1="300" x2="300" y2="450" stroke="#333333" stroke-width="3" stroke-opacity="0.6" />
+  <line x1="300" y1="450" x2="550" y2="400" stroke="#333333" stroke-width="3" stroke-opacity="0.6" />
+  <line x1="600" y1="220" x2="550" y2="400" stroke="#333333" stroke-width="3" stroke-opacity="0.6" />
+  
+  <!-- Node labels with white text -->
+  <text x="200" y="200" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-weight="bold" font-size="20">HTML</text>
+  <text x="400" y="300" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-weight="bold" font-size="20">CSS</text>
+  <text x="600" y="220" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-weight="bold" font-size="20">JS</text>
+  <text x="300" y="450" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-weight="bold" font-size="20">API</text>
+  <text x="550" y="400" text-anchor="middle" dominant-baseline="middle" fill="white" font-family="Arial" font-weight="bold" font-size="20">DATA</text>
+  
+  <!-- Pulsing animation for nodes -->
+  <circle cx="200" cy="200" r="50" fill="none" stroke="#4361ee" stroke-width="3">
+    <animate attributeName="r" values="50;60;50" dur="4s" repeatCount="indefinite" />
+    <animate attributeName="stroke-opacity" values="1;0.2;1" dur="4s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="400" cy="300" r="60" fill="none" stroke="#b7950b" stroke-width="3"> <!-- Changed to dark yellow -->
+    <animate attributeName="r" values="60;70;60" dur="5s" repeatCount="indefinite" />
+    <animate attributeName="stroke-opacity" values="1;0.2;1" dur="5s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="600" cy="220" r="45" fill="none" stroke="#7209b7" stroke-width="3">
+    <animate attributeName="r" values="45;55;45" dur="4.5s" repeatCount="indefinite" />
+    <animate attributeName="stroke-opacity" values="1;0.2;1" dur="4.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="300" cy="450" r="55" fill="none" stroke="#f72585" stroke-width="3">
+    <animate attributeName="r" values="55;65;55" dur="3.5s" repeatCount="indefinite" />
+    <animate attributeName="stroke-opacity" values="1;0.2;1" dur="3.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="550" cy="400" r="40" fill="none" stroke="#4cc9f0" stroke-width="3">
+    <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="stroke-opacity" values="1;0.2;1" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Data packets moving along connections -->
+  <circle cx="200" cy="200" r="5" fill="#4361ee">
+    <animate attributeName="cx" values="200;400" dur="3s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="200;300" dur="3s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="400" cy="300" r="5" fill="#b7950b"> <!-- Changed to dark yellow -->
+    <animate attributeName="cx" values="400;600" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="300;220" dur="2s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="400" cy="300" r="5" fill="#b7950b"> <!-- Changed to dark yellow -->
+    <animate attributeName="cx" values="400;300" dur="2.5s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="300;450" dur="2.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="300" cy="450" r="5" fill="#f72585">
+    <animate attributeName="cx" values="300;550" dur="3.2s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="450;400" dur="3.2s" repeatCount="indefinite" />
+  </circle>
+  
+  <circle cx="600" cy="220" r="5" fill="#7209b7">
+    <animate attributeName="cx" values="600;550" dur="2.8s" repeatCount="indefinite" />
+    <animate attributeName="cy" values="220;400" dur="2.8s" repeatCount="indefinite" />
+  </circle>
 </svg>
